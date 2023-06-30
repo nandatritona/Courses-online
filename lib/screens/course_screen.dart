@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/widgets/description_section.dart';
+import 'package:flutter_ui/widgets/videos_section.dart';
 
 class CourseScreen extends StatefulWidget {
     String img;
@@ -165,6 +167,11 @@ class _CourseScreenState extends State<CourseScreen> {
                                 ],
                             ),
                         ),
+
+                        // we will create 2 different section for videos section and description section
+                        SizedBox(height: 10),
+                        // if isVideosSection condition is true then VidoesSection will be shown and if condition is false it means DescriptionSection will be shown.
+                        isVideosSection ? VidoesSection() : DescriptionSection(),
                     ],
                 ),
             ),
