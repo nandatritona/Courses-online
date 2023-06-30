@@ -20,11 +20,20 @@ class DescriptionSection extends StatelessWidget {
                     SizedBox(height: 20),
                     Row(
                         children: [
+                            Text(
+                                "Course Length:",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w600,
+                                ),
+                            ),
+                            // Spacer(),
+                            SizedBox(width: 5,),
                             Icon(
                                 Icons.timer,
                                 color: Color(0xFF674AEF),
                             ),
-                            SizedBox(width: 5,),
+                            SizedBox(width: 5),
                             Text(
                                 "26 Hours",
                                 style: TextStyle(
@@ -34,16 +43,25 @@ class DescriptionSection extends StatelessWidget {
                             ),
                         ],
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
                     Row(
                         children: [
+                            Text(
+                                "Rating:",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w600,
+                                ),
+                            ),
+                            // Spacer(),
+                            SizedBox(width: 5),
                             Icon(
-                                Icons.start,
+                                Icons.star,
                                 color: Colors.amber,
                             ),
-                            SizedBox(width: 5,),
+                            SizedBox(width: 5),
                             Text(
-                                "26 Hours",
+                                "4.5",
                                 style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,

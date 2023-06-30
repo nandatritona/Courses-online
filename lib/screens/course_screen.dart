@@ -19,8 +19,8 @@ class _CourseScreenState extends State<CourseScreen> {
                 foregroundColor: Colors.black,
                 backgroundColor: Colors.white,
                 elevation: 0,
-                centerTitle: false,
-                // centerTitle: true,
+                // centerTitle: false,
+                centerTitle: true,
                 title: Text(
                     widget.img,
                     style: TextStyle(
