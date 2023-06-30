@@ -267,7 +267,7 @@ class HomePage extends StatelessWidget {
                 unselectedItemColor: Colors.grey,
                 items: [
                     BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-                    BottomNavigationBarItem( icon: Icon(Icons.assignment), label: 'Courses'),
+                    BottomNavigationBarItem(icon: Icon(Icons.assignment), label: 'Courses'),
                     BottomNavigationBarItem( icon: Icon(Icons.favorite), label: 'Wishlist'),
                     BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
                 ]
