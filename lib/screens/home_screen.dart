@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/screens/course_screen.dart';
 
 class HomePage extends StatelessWidget {
     HomePage({super.key});
@@ -47,7 +48,7 @@ class HomePage extends StatelessWidget {
                 children: [
                     Container(
                         padding: EdgeInsets.only(
-                            top: 15, 
+                            top: 15,
                             left: 15,
                             right: 15,
                             bottom: 10,
@@ -71,13 +72,13 @@ class HomePage extends StatelessWidget {
                                             color: Colors.white,
                                         ),
                                         Icon(
-                                            Icons.notifications,
-                                            size: 30,
-                                            color: Colors.white,
+                                        Icons.notifications,
+                                        size: 30,
+                                        color: Colors.white,
                                         ),
                                     ],
                                 ),
-                                SizedBox(height: 20,),
+                                SizedBox(height: 20),
                                 Padding(
                                     padding: EdgeInsets.only(
                                         left: 3,
@@ -193,52 +194,65 @@ class HomePage extends StatelessWidget {
                                     physics: NeverScrollableScrollPhysics(),
                                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 2,
-                                        childAspectRatio: (MediaQuery.of(context).size.height - 50 - 25) / (4 * 240),
+                                        childAspectRatio:
+                                            (MediaQuery.of(context).size.height - 50 - 25) /
+                                                (4 * 240),
                                         mainAxisSpacing: 10,
                                         crossAxisSpacing: 10,
                                     ),
-                                    itemBuilder: (context, index){
-                                        return InkWell(
-                                            onTap: (){},
-                                            child: Container(
-                                                padding: EdgeInsets.symmetric( vertical: 20, horizontal: 10, ),
-                                                decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.circular(20),
-                                                    color: Color(0xFFF5F3FF),
-                                                ),
-                                                child: Column(
-                                                    children: [
-                                                        Padding(
-                                                            padding: EdgeInsets.all(10),
-                                                            child: Image.asset(
-                                                                "images/${imgList[index]}.png",
-                                                                width: 100,
-                                                                height: 80,
-                                                            ),
-                                                        ),
-                                                        SizedBox(height: 10),
-                                                        Text(
-                                                            imgList[index],
-                                                            style: TextStyle(
-                                                                fontSize: 22,
-                                                                fontWeight: FontWeight.w600,
-                                                                color: Colors.black.withOpacity(0.6),
-                                                            ),
-                                                        ),
-                                                        SizedBox(height: 10),
-                                                        Text(
-                                                            "55 Videos",
-                                                            style: TextStyle(
-                                                                fontSize: 15,
-                                                                fontWeight: FontWeight.w500,
-                                                                color: Colors.black.withOpacity(0.5),
-                                                            ),
-                                                        ),
-                                                    ],
-                                                ),
+                                itemBuilder: (context, index) {
+                                    return InkWell(
+                                        onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        CourseScreen(imgList[index]),
+                                                )
+                                            );
+                                        },
+                                        child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                            vertical: 20,
+                                            horizontal: 10,
                                             ),
-                                        );
-                                    },
+                                            decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(20),
+                                            color: Color(0xFFF5F3FF),
+                                            ),
+                                            child: Column(
+                                            children: [
+                                                Padding(
+                                                    padding: EdgeInsets.all(10),
+                                                    child: Image.asset(
+                                                        "images/${imgList[index]}.png",
+                                                        width: 100,
+                                                        height: 80,
+                                                    ),
+                                                ),
+                                                SizedBox(height: 10),
+                                                Text(
+                                                    imgList[index],
+                                                    style: TextStyle(
+                                                        fontSize: 22,
+                                                        fontWeight: FontWeight.w600,
+                                                        color: Colors.black.withOpacity(0.6),
+                                                    ),
+                                                ),
+                                                SizedBox(height: 10),
+                                                Text(
+                                                    "55 Videos",
+                                                    style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight: FontWeight.w500,
+                                                        color: Colors.black.withOpacity(0.5),
+                                                    ),
+                                                ),
+                                            ],
+                                            ),
+                                        ),
+                                    );
+                                },
                                 ),
                             ],
                         ),
@@ -246,14 +260,15 @@ class HomePage extends StatelessWidget {
                 ],
             ),
             bottomNavigationBar: BottomNavigationBar(
+                showUnselectedLabels: true,
                 iconSize: 32,
                 selectedItemColor: Color(0xFF674AEF),
                 selectedFontSize: 18,
                 unselectedItemColor: Colors.grey,
                 items: [
                     BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-                    BottomNavigationBarItem(icon: Icon(Icons.assignment), label: 'Courses'),
-                    BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Wishlist'),
+                    BottomNavigationBarItem( icon: Icon(Icons.assignment), label: 'Courses'),
+                    BottomNavigationBarItem( icon: Icon(Icons.favorite), label: 'Wishlist'),
                     BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
                 ]
             ),
